@@ -1,0 +1,25 @@
+body, header, nav, aside, section, h2, ul, figure, p, ol {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;}
+
+body {
+
+    line-height: 1.5;
+
+}
+
+ol, ul {
+    list-style: none;
+
+
+}
+
+img {
+    width: 100%
+  }
