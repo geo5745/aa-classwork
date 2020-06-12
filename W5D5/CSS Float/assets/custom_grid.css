@@ -1,0 +1,27 @@
+/* PUT FLUID GRID CODE HERE */
+
+
+.grid {
+    margin: 5px auto;
+    width: 900px;
+    /* border: 5px solid black; */
+    /* background-image: url("img/cat.jpg"); */
+    /* background-size: cover; */
+  }
+
+  .grid > aside {
+    float: left;
+    width: 180px;
+    /* height: 90px; */
+    /* border: 5px solid black; */
+    /* background: gray; */
+    /* cursor: pointer; */
+  }
+
+  /* .grid > li.cleared {
+    background: transparent;
+  }
+
+  .grid > li:hover {
+    background: yellow;
+  } */
