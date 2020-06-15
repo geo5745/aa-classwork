@@ -16,7 +16,11 @@ def physics_no_chemistry
   --EXCEPT
   --SELECT yr from nobels where subject = 'Chemistry'
 
-  subject year
+  select yr 
+  from nobels 
+  where subject like 'Physics' and yr 
+  not in(select yr from nobels where subject like 'Chemistry' group by yr)
+  group by yr
   ------- -----
 
   SQL

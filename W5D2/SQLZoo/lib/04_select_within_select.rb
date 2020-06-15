@@ -14,40 +14,23 @@ require_relative './sqlzoo.rb'
 # inner SELECT. We can name the tables so that we can tell the difference
 # between the inner and outer versions.
 
-def example_select_with_subquery
-  execute(<<-SQL)
-    SELECT
-      name
-    FROM
-      countries
-    WHERE
-      population > (
-        SELECT
-          population
-        FROM
-          countries
-        WHERE
-          name='Romania'
-        )
-  SQL
-end
+
 
 def larger_than_russia
   # List each country name where the population is larger than 'Russia'.
   execute(<<-SQL)
-    SELECT
+    select 
       name
-    FROM
+    from
       countries
-    WHERE
-      population > (
-        SELECT 
-          population
-        FROM
-          countries
-        WHERE
-          name = 'Russia'
-      )
+    where
+      population >
+    (select 
+      population
+    from
+      countries
+    where
+      name like 'Russia')
   SQL
 end
 
@@ -55,64 +38,45 @@ def richer_than_england
   # Show the countries in Europe with a per capita GDP greater than
   # 'United Kingdom'.
   execute(<<-SQL)
-    select
-      name
-    from
-      countries
-    where
-      continent = 'Europe' and gdp / population > (
-      select
-        gdp / population
+  select
+    name
+  from
+    countries
+  where
+    continent like 'Europe' and
+    gdp / population >
+  (select gdp / population
       from
-        countries
+    countries
       where
-        name = 'United Kingdom'
-      )
+    name like 'United Kingdom')
+  
   SQL
 end
 
-def neighbors_of_certain_b_countries
-  # List the name and continent of countries in the continents containing
-  # 'Belize', 'Belgium'.
-  execute(<<-SQL)
-    SELECT
-      name, continent
-    FROM 
-      countries
-    WHERE
-      continent IN(
-        SELECT
-          continent
-        FROM
-          countries
-        WHERE
-          name IN('Belize','Belgium'))
-  SQL
-end
+
+
+
+
+
+
+
+ 
 
 def population_constraint
   # Which country has a population that is more than Canada but less than
   # Poland? Show the name and the population.
   execute(<<-SQL)
-    select
-      name, population
-    from
-      countries
-    where
-      population > (
-        select
-          population
-        from
-          countries
-        where
-          name = 'Canada'
-      ) and population < (    
-        select
-          population
-        from
-          countries
-        where
-          name = 'Poland')
+    select name, population
+    from countries
+    where population > 
+      (select population
+    from countries
+    where name like 'Canada') AND
+    population < 
+    (select population
+    from countries
+    where name like 'Poland')
   SQL
 end
 
@@ -122,15 +86,12 @@ def sparse_continents
   # population.
   # Hint: Sometimes rewording the problem can help you see the solution.
   execute(<<-SQL)
-  select
-    name, continent, population
-  from
-    countries
-  where
-    continent = (
-  SELECT continent from countries
-  EXCEPT
-  select continent from countries where population > 25000000)
+  select name, continent, population 
+  from countries 
+  where continent 
+  not in 
+  (select continent from countries where population > 25000000 group by continent)
+  
   
   SQL
 end
