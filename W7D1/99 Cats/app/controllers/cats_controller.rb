@@ -3,12 +3,30 @@ class CatsController < ApplicationController
 
   def index
     @cats = Cat.all
+    
+    cookies
+    #session[:my_cookie2] = 'hi2'
+    #flash[:my_cookie3] = 'hi3'
+    #flash.now[:my_cookie4] = 'hi4'
+
     render :index
   end
 
   def show
     @cat = Cat.find(params[:id])
-    render :show
+    
+    render json: cookies
+    # render json: session
+    #render json: flash
+    #render json: flash.now
+
+    #p session
+    #p flash
+
+    
+    #render :show
+
+
   end
 
   def new
