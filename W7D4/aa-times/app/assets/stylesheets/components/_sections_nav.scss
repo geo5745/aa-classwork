@@ -1,0 +1,28 @@
+.sections-nav {
+    display:flex;
+    justify-content: space-evenly;
+    padding: 15px 0;
+    border-bottom: 1px solid $gray;
+    align-items: center;
+}
+
+.sections-nav button {
+    background-color: transparent;
+    color: black;
+    text-transform: capitalize;
+}
+
+.sections-nav button:hover {
+    background-color: $light-gray;
+    color: black;
+    text-transform: capitalize;
+}
+
+.sections-nav a {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.sections-nav a:hover {
+    background-color: $light-gray;
+}
