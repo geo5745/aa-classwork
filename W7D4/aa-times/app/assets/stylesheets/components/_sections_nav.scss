@@ -20,9 +20,9 @@
 
 .sections-nav a {
     background-color: transparent;
-    text-decoration: underline;
+    text-transform: uppercase;
 }
 
 .sections-nav a:hover {
-    background-color: $light-gray;
+    text-decoration: underline;
 }
