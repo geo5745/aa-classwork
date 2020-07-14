@@ -19,7 +19,7 @@ export const htmlGenerator = (string, htmlElement) => {
 
 htmlGenerator('Party Time.', partyHeader);
 
-// export default warmUp; // "default" means export the entire page
+//export default warmUp; // "default" means export the entire page
 
 
-// module.exports = warmUp;
+//module.exports = warmUp;

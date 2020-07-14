@@ -1,24 +1,25 @@
-import {htmlGenerator} from "./warmup";
+//import {htmlGenerator} from "./warmup";
 
-const clockDiv = document.getElementById('clock');
+//const clockDiv = document.getElementById('clock');
 
 
 
-class Clock {
-    constructor() {
+export class Clock {
+    constructor(callback,div) {
         const currentTime = new Date();
 
         this.hours = currentTime.getHours();
         this.minutes = currentTime.getMinutes();
         this.seconds = currentTime.getSeconds();
 
-        
+        this.callback = callback;
+        this.div = div;
         setInterval(this._tick.bind(this), 1000);
     }
 
     printTime(){
         let current = `${this.hours} : ${this.minutes} : ${this.seconds}`;
-        return current;
+        this.callback.bind(this)(current, this.div);    
         
     }
 
@@ -33,14 +34,10 @@ class Clock {
                 this.hours += 1;
             }
         }
-        let current = this.printTime();
-        htmlGenerator(current, clockDiv);
+        this.printTime();
+        
         
     }
 }
 
-console.log("is this running?")
-const clock1 = new Clock();
-console.log("is this running now?") 
-
-export default clock;
+//export default clock;
