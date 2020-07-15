@@ -9,18 +9,28 @@ class Autocomplete extends React.Component {
 
     }
 
-    search(string, begins){
-        if
+    setInput (e) {
+        e.preventDefault();
+        let val = e.target.value;
+        this.setState({ inputVal: val });
+
     }
 
-//names.filter((name, index)=>name.length>2)
+    search(string, begins){
+        string = string.toLowerCase();
+        begins = begins.toLowerCase();
+        let sliceNum = begins.length;
+        return string.slice(0,sliceNum) === begins;
+    }
+
     render () {
-        const names = this.props.names.map((name,index) => {
+        const filteredNames = this.props.names.filter(name => this.search(name,this.state.inputVal));
+        const names = filteredNames.map((name,index) => {
             return <li key={index}>{name}</li>
          });
         return (
             <>  
-                <input></input>
+                <input value={this.state.inputVal} onChange={this.setInput.bind(this)}></input>
                 <ul>
                     { names }
                 </ul>
