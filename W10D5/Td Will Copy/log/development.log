@@ -1,0 +1,556 @@
+  [1m[35m (150.9ms)[0m  [1m[35mCREATE DATABASE "Todo_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (62.7ms)[0m  [1m[35mCREATE DATABASE "Todo_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todos_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (156.4ms)[0m  [1m[35mCREATE DATABASE "todos_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (51.5ms)[0m  [1m[35mCREATE DATABASE "todos_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5286629289131009610)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTodos (20200717194537)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200717194537_create_todos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200717194537"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-17 20:04:52.403676"], ["updated_at", "2020-07-17 20:04:52.403676"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5286629289131009610)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodo Create (0.9ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "A"], ["body", "A body"], ["done", false], ["created_at", "2020-07-17 20:06:40.666023"], ["updated_at", "2020-07-17 20:06:40.666023"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Started GET "/" for ::1 at 2020-07-17 16:18:54 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'rails-jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/wjs/Desktop/Todos/Todos/app/assets/config
+  /Users/wjs/Desktop/Todos/Todos/app/assets/images
+  /Users/wjs/Desktop/Todos/Todos/app/assets/javascripts
+  /Users/wjs/Desktop/Todos/Todos/app/assets/stylesheets
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /Users/wjs/Desktop/Todos/Todos/node_modules:
+  app/views/layouts/application.html.erb:8:in `view template'
+
+Started POST "/__better_errors/46ef51e55af7fa5d/variables" for ::1 at 2020-07-17 16:18:55 -0400
+Started GET "/" for ::1 at 2020-07-17 16:19:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'rails-jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/wjs/Desktop/Todos/Todos/app/assets/config
+  /Users/wjs/Desktop/Todos/Todos/app/assets/images
+  /Users/wjs/Desktop/Todos/Todos/app/assets/javascripts
+  /Users/wjs/Desktop/Todos/Todos/app/assets/stylesheets
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /Users/wjs/Desktop/Todos/Todos/node_modules:
+  app/views/layouts/application.html.erb:8:in `view template'
+
+Started POST "/__better_errors/cc9dc6b402506b4b/variables" for ::1 at 2020-07-17 16:19:18 -0400
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:19:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'rails-jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/wjs/Desktop/Todos/Todos/app/assets/config
+  /Users/wjs/Desktop/Todos/Todos/app/assets/images
+  /Users/wjs/Desktop/Todos/Todos/app/assets/javascripts
+  /Users/wjs/Desktop/Todos/Todos/app/assets/stylesheets
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /Users/wjs/Desktop/Todos/Todos/node_modules:
+  app/views/layouts/application.html.erb:8:in `view template'
+
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:19:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'rails-jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/wjs/Desktop/Todos/Todos/app/assets/config
+  /Users/wjs/Desktop/Todos/Todos/app/assets/images
+  /Users/wjs/Desktop/Todos/Todos/app/assets/javascripts
+  /Users/wjs/Desktop/Todos/Todos/app/assets/stylesheets
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /Users/wjs/Desktop/Todos/Todos/node_modules:
+  app/views/layouts/application.html.erb:8:in `view template'
+
+Started POST "/__better_errors/c1f6ad82068d547a/variables" for 127.0.0.1 at 2020-07-17 16:19:31 -0400
+Started GET "/" for ::1 at 2020-07-17 16:20:49 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'rails-jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/wjs/Desktop/Todos/Todos/app/assets/config
+  /Users/wjs/Desktop/Todos/Todos/app/assets/images
+  /Users/wjs/Desktop/Todos/Todos/app/assets/javascripts
+  /Users/wjs/Desktop/Todos/Todos/app/assets/stylesheets
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /Users/wjs/Desktop/Todos/Todos/node_modules:
+  app/views/layouts/application.html.erb:8:in `view template'
+
+Started POST "/__better_errors/3e746fa74cc251f8/variables" for ::1 at 2020-07-17 16:20:50 -0400
+Started GET "/" for ::1 at 2020-07-17 16:22:18 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.7ms)
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:22:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 2599ms (Views: 2596.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2059ms (Views: 2056.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:22:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:22:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:22:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTodo Destroy (1.2ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "buy milk"], ["body", "only 2%"], ["done", false], ["created_at", "2020-07-17 20:26:33.502500"], ["updated_at", "2020-07-17 20:26:33.502500"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "fix car"], ["body", "rotate tires"], ["done", false], ["created_at", "2020-07-17 20:26:33.504956"], ["updated_at", "2020-07-17 20:26:33.504956"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "clean room"], ["body", "clean room"], ["done", true], ["created_at", "2020-07-17 20:26:33.506683"], ["updated_at", "2020-07-17 20:26:33.506683"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+Started GET "/" for ::1 at 2020-07-17 16:26:41 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.3ms)
+Completed 200 OK in 800ms (Views: 797.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:26:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:26:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:26:55 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-17 16:27:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:27:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 58ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:28:00 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:31:12 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:32:21 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:32:31 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:33:16 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:33:56 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/api/todos/1" for ::1 at 2020-07-17 16:34:57 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/" for ::1 at 2020-07-17 16:35:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:36:08 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/" for ::1 at 2020-07-17 16:36:44 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (2.4ms)
+Completed 200 OK in 1269ms (Views: 1265.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:36:46 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:38:14 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting ';' or '\n':
+  app/controllers/api/todos_controller.rb:15:in `'
+
+Started GET "/" for ::1 at 2020-07-17 16:39:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:39:11 -0400
+
+LoadError - Unable to autoload constant Api::TodosController, expected /Users/wjs/Desktop/Todos/Todos/app/controllers/api/todos_controller.rb to define it:
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:39:52 -0400
+
+LoadError - Unable to autoload constant Api::TodosController, expected /Users/wjs/Desktop/Todos/Todos/app/controllers/api/todos_controller.rb to define it:
+
+Started GET "/" for ::1 at 2020-07-17 16:40:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.2ms)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:40:16 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for Api::TodosController:
+
+Started GET "/" for ::1 at 2020-07-17 16:42:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:42:10 -0400
+Processing by Api::TodosController#index as JSON
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/todos/index, application/index with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/wjs/Desktop/Todos/Todos/app/views"
+:
+  app/controllers/api/todos_controller.rb:18:in `index'
+
+Started GET "/" for ::1 at 2020-07-17 16:42:36 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 75ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:42:38 -0400
+Processing by Api::TodosController#index as JSON
+  Rendering api/todos/index.html
+  Rendered api/todos/index.html (0.4ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:43:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:43:25 -0400
+Processing by Api::TodosController#index as JSON
+  Rendering api/todos/index.html
+  Rendered api/todos/index.html (0.5ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:43:29 -0400
+Processing by Api::TodosController#index as JSON
+  Rendering api/todos/index.html
+  Rendered api/todos/index.html (0.3ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:44:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2020-07-17 16:47:23 -0400
+Processing by Api::TodosController#index as JSON
+  Rendering api/todos/index.html
+  Rendered api/todos/index.html (0.6ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:48:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:48:55 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:19
+Completed 200 OK in 26ms (Views: 12.0ms | ActiveRecord: 9.5ms)
+
+
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Started GET "/api/todos" for ::1 at 2020-07-17 16:50:48 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:19
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:51:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:52:23 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:19
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:54:16 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wjs/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (3.1ms)
+Completed 200 OK in 965ms (Views: 963.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:54:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-17 16:54:36 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:54:38 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/todos_controller.rb:20
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 200 OK in 24148ms (Views: 1.3ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:56:29 -0400
+Processing by Api::TodosController#index as JSON
+Completed 500 Internal Server Error in 197559ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:59:47 -0400
+Started GET "/api/todos" for ::1 at 2020-07-17 16:59:47 -0400
+
+SystemExit - exit:
+  (byebug):1:in `index'
+  app/controllers/api/todos_controller.rb:20:in `index'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 16:59:47 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 200 OK in 2484ms (Views: 1.7ms | ActiveRecord: 1.9ms)
+
+
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Processing by Api::TodosController#index as JSON
+Started GET "/api/todos" for ::1 at 2020-07-17 17:02:38 -0400
+Completed 500 Internal Server Error in 887ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 167966ms (Views: 3.6ms | ActiveRecord: 1.7ms)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `index'
+  app/controllers/api/todos_controller.rb:20:in `index'
+
+Started GET "/api/todos" for ::1 at 2020-07-17 17:02:39 -0400
+Started GET "/api/todos" for ::1 at 2020-07-17 17:02:39 -0400
+
+LoadError - Unable to autoload constant Api::TodosController, expected /Users/wjs/Desktop/Todos/Todos/app/controllers/api/todos_controller.rb to define it:
+
+Processing by Api::TodosController#index as JSON
+
+LoadError - Unable to autoload constant Api::TodosController, expected /Users/wjs/Desktop/Todos/Todos/app/controllers/api/todos_controller.rb to define it:
+
+  [1m[36mTodo Load (1.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 200 OK in 218ms (Views: 116.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/todos" for ::1 at 2020-07-17 17:02:44 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 2.1ms)
+
+

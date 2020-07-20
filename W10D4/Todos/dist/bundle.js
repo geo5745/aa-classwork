@@ -241,6 +241,7 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
     value: function update(field) {
       var _this2 = this;
 
+      e.preventDefault();
       return function (e) {
         _this2.setState(_defineProperty({}, field, e.target.value));
       };

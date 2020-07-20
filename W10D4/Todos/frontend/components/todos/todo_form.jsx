@@ -24,6 +24,7 @@ export default class TodoForm extends React.Component {
     // }
 
     update(field) {
+        e.preventDefault();
         return e => {
             this.setState({ [field]: e.target.value });
         }
